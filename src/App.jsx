@@ -99,22 +99,25 @@ export default function App() {
           <div>
             <h2>Building</h2>
             <ol className="projects">
-              {PROJECTS.map((project) => (
+              {PROJECTS.map((project) => {
+                const Tag = project.url ? 'a' : 'div'
+                return (
                 <li key={project.name}>
-                  <a className="project" href={project.url} target="_blank" rel="noopener">
+                  <Tag className="project" {...(project.url && { href: project.url, target: '_blank', rel: 'noopener' })}>
                     <span className="project-emoji" aria-hidden="true">{project.emoji}</span>
                     <span className="project-name">
                       {project.name}
-                      <span className="project-arrow" aria-hidden="true">↗</span>
+                      {project.url && <span className="project-arrow" aria-hidden="true">↗</span>}
                     </span>
                     <span className="project-kind">{project.kind}</span>
                     <span className="project-status">
                       <i aria-hidden="true" />
                       {project.status}
                     </span>
-                  </a>
+                  </Tag>
                 </li>
-              ))}
+                )
+              })}
             </ol>
           </div>
 

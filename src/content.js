@@ -10,7 +10,6 @@ export const INTRO = [
 export const PROJECTS = [
   {
     name: 'Break Tennis',
-    url: 'https://break.tennis',
     emoji: '🎾',
     kind: 'Member management for tennis clubs and coaches',
     status: 'In development',
