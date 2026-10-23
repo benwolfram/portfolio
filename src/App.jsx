@@ -82,7 +82,7 @@ export default function App() {
                       target="_blank"
                       rel="noopener"
                       aria-label={company.name}
-                      style={{ '--logo': `url(${company.logo})`, '--ratio': company.ratio }}
+                      style={{ '--ratio': company.ratio, WebkitMaskImage: `url(${company.logo})`, maskImage: `url(${company.logo})` }}
                     />
                   </li>
                 ))}
